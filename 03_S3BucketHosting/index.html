@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ABYSSAL — Deep Sea Expeditions</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="preloader-depth">
+      <span class="depth-num" id="depth-counter">0</span>
+      <span class="depth-unit">m</span>
+    </div>
+    <p class="preloader-label">Descending to the abyss...</p>
+    <div class="preloader-bar"><div class="preloader-fill"></div></div>
+  </div>
+
+  <!-- Cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursor-follower"></div>
+
+  <!-- Nav -->
+  <nav id="navbar">
+    <div class="nav-logo">ABYSSAL</div>
+    <ul class="nav-links">
+      <li><a href="#expeditions">Expeditions</a></li>
+      <li><a href="#creatures">Creatures</a></li>
+      <li><a href="#depths">The Deep</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">Book Dive</a>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero" id="hero">
+    <canvas id="hero-canvas"></canvas>
+    <div class="hero-depth-indicator">
+      <div class="depth-line"></div>
+      <span class="current-depth">— 0m</span>
+    </div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Est. 2019 · Pacific Expeditions</p>
+      <h1 class="hero-title">
+        <span class="title-line">WHERE</span>
+        <span class="title-line italic">LIGHT</span>
+        <span class="title-line">DIES</span>
+      </h1>
+      <p class="hero-sub">Premium deep-sea exploration for those who seek the last frontier. Descend beyond 11,000 meters into absolute darkness.</p>
+      <div class="hero-actions">
+        <a href="#expeditions" class="btn-primary">Explore Expeditions</a>
+        <a href="#depths" class="btn-ghost">Watch Film ↗</a>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <span>Scroll to descend</span>
+      <div class="scroll-arrow"></div>
+    </div>
+    <div class="bubbles" id="bubbles"></div>
+  </section>
+
+  <!-- Stats Strip -->
+  <div class="stats-strip">
+    <div class="stat-item">
+      <span class="stat-num">11,034</span>
+      <span class="stat-label">Meters Deep</span>
+    </div>
+    <div class="stat-divider">·</div>
+    <div class="stat-item">
+      <span class="stat-num">247</span>
+      <span class="stat-label">Species Documented</span>
+    </div>
+    <div class="stat-divider">·</div>
+    <div class="stat-item">
+      <span class="stat-num">89</span>
+      <span class="stat-label">Expeditions Launched</span>
+    </div>
+    <div class="stat-divider">·</div>
+    <div class="stat-item">
+      <span class="stat-num">12</span>
+      <span class="stat-label">World Records</span>
+    </div>
+  </div>
+
+  <!-- Expeditions -->
+  <section class="expeditions" id="expeditions">
+    <div class="section-header">
+      <span class="section-tag">/ 01 — Expeditions</span>
+      <h2 class="section-title">Choose Your<br/><em>Descent</em></h2>
+    </div>
+    <div class="expedition-grid">
+      <div class="exp-card" data-depth="200">
+        <div class="exp-img-wrap">
+          <div class="exp-img twilight"></div>
+          <div class="exp-depth-badge">−200m</div>
+        </div>
+        <div class="exp-info">
+          <span class="exp-zone">Twilight Zone</span>
+          <h3>Mesopelagic Drift</h3>
+          <p>Where sunlight fades to shadow. Witness the great vertical migration — billions of creatures rising and falling with the sun.</p>
+          <div class="exp-meta">
+            <span>7 Days</span>
+            <span>$24,000</span>
+          </div>
+          <a href="#" class="exp-link">Details →</a>
+        </div>
+      </div>
+
+      <div class="exp-card featured" data-depth="1000">
+        <div class="exp-img-wrap">
+          <div class="exp-img midnight"></div>
+          <div class="exp-depth-badge">−1,000m</div>
+          <div class="exp-featured-tag">Most Popular</div>
+        </div>
+        <div class="exp-info">
+          <span class="exp-zone">Midnight Zone</span>
+          <h3>Bathypelagic Plunge</h3>
+          <p>Total darkness. Bioluminescent galaxies surround you. Giant squid territories and the alien creatures of true deep water.</p>
+          <div class="exp-meta">
+            <span>14 Days</span>
+            <span>$89,000</span>
+          </div>
+          <a href="#" class="exp-link">Details →</a>
+        </div>
+      </div>
+
+      <div class="exp-card" data-depth="6000">
+        <div class="exp-img-wrap">
+          <div class="exp-img hadal"></div>
+          <div class="exp-depth-badge">−6,000m</div>
+        </div>
+        <div class="exp-info">
+          <span class="exp-zone">Hadal Zone</span>
+          <h3>Challenger Deep</h3>
+          <p>The deepest point on Earth. Only a handful of humans have ever descended here. This is the ultimate frontier.</p>
+          <div class="exp-meta">
+            <span>21 Days</span>
+            <span>$420,000</span>
+          </div>
+          <a href="#" class="exp-link">Details →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Creatures -->
+  <section class="creatures" id="creatures">
+    <div class="creatures-bg"></div>
+    <div class="section-header light">
+      <span class="section-tag">/ 02 — Creatures</span>
+      <h2 class="section-title">Alien<br/><em>Life Forms</em></h2>
+    </div>
+    <div class="creatures-showcase">
+      <div class="creature-item" id="c1">
+        <div class="creature-glow glow-blue"></div>
+        <div class="creature-icon">🦑</div>
+        <div class="creature-data">
+          <h3>Architeuthis Dux</h3>
+          <p class="creature-aka">Giant Squid</p>
+          <p class="creature-desc">Reaches 13 meters. Possesses the largest eyes in the animal kingdom — evolved to detect the faintest bioluminescence.</p>
+          <div class="creature-depth-range">
+            <span>500m — 1,000m</span>
+            <div class="depth-bar"><div class="depth-fill" style="width:60%"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="creature-item" id="c2">
+        <div class="creature-glow glow-green"></div>
+        <div class="creature-icon">🐟</div>
+        <div class="creature-data">
+          <h3>Melanocetus Johnsonii</h3>
+          <p class="creature-aka">Humpback Anglerfish</p>
+          <p class="creature-desc">Lures prey with a bioluminescent bulb dangling before rows of translucent fangs. A living lantern in the void.</p>
+          <div class="creature-depth-range">
+            <span>200m — 2,000m</span>
+            <div class="depth-bar"><div class="depth-fill" style="width:85%"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="creature-item" id="c3">
+        <div class="creature-glow glow-red"></div>
+        <div class="creature-icon">🪼</div>
+        <div class="creature-data">
+          <h3>Stygiomedusa Gigantea</h3>
+          <p class="creature-aka">Giant Phantom Jellyfish</p>
+          <p class="creature-desc">One of the largest invertebrates on Earth. Four ribbon-like arms trail up to 10 meters. Witnessed fewer than 130 times.</p>
+          <div class="creature-depth-range">
+            <span>1,000m — 6,000m</span>
+            <div class="depth-bar"><div class="depth-fill" style="width:95%"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Depth Visualization -->
+  <section class="depths-viz" id="depths">
+    <div class="section-header">
+      <span class="section-tag">/ 03 — The Deep</span>
+      <h2 class="section-title">Ocean<br/><em>Layers</em></h2>
+    </div>
+    <div class="depth-chart">
+      <div class="depth-zone" style="--bg: #0a1628; --h: 120px;">
+        <div class="dz-label">
+          <span class="dz-name">Epipelagic</span>
+          <span class="dz-range">0 – 200m</span>
+        </div>
+        <div class="dz-desc">Sunlit zone. Home to most ocean life. Phytoplankton, coral, dolphins, sharks.</div>
+        <div class="dz-icon">☀️</div>
+      </div>
+      <div class="depth-zone" style="--bg: #071020; --h: 150px;">
+        <div class="dz-label">
+          <span class="dz-name">Mesopelagic</span>
+          <span class="dz-range">200 – 1,000m</span>
+        </div>
+        <div class="dz-desc">Twilight zone. Dim blue light. Pressure begins. Vertical migration highways.</div>
+        <div class="dz-icon">🌑</div>
+      </div>
+      <div class="depth-zone" style="--bg: #040c18; --h: 180px;">
+        <div class="dz-label">
+          <span class="dz-name">Bathypelagic</span>
+          <span class="dz-range">1,000 – 4,000m</span>
+        </div>
+        <div class="dz-desc">Midnight zone. Absolute darkness. Crushing pressure. Bioluminescence rules.</div>
+        <div class="dz-icon">✨</div>
+      </div>
+      <div class="depth-zone" style="--bg: #020810; --h: 160px;">
+        <div class="dz-label">
+          <span class="dz-name">Abyssopelagic</span>
+          <span class="dz-range">4,000 – 6,000m</span>
+        </div>
+        <div class="dz-desc">Abyss. Near-freezing temperatures. Extreme pressure. Ancient sediments.</div>
+        <div class="dz-icon">🌊</div>
+      </div>
+      <div class="depth-zone hadal-zone" style="--bg: #010508; --h: 200px;">
+        <div class="dz-label">
+          <span class="dz-name">Hadopelagic</span>
+          <span class="dz-range">6,000m+</span>
+        </div>
+        <div class="dz-desc">The hadal zone. Ocean trenches. Challenger Deep at 11,034m. The absolute bottom of our world.</div>
+        <div class="dz-icon">💀</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quote -->
+  <section class="quote-section">
+    <div class="quote-inner">
+      <div class="quote-mark">"</div>
+      <blockquote>The sea, once it casts its spell, holds one in its net of wonder forever.</blockquote>
+      <cite>— Jacques Cousteau</cite>
+    </div>
+  </section>
+
+  <!-- Contact / CTA -->
+  <section class="contact-section" id="contact">
+    <div class="contact-grid">
+      <div class="contact-left">
+        <span class="section-tag">/ 04 — Contact</span>
+        <h2 class="contact-title">Ready to<br/><em>Descend?</em></h2>
+        <p>Join our next expedition. Limited berths available. Each journey is a private, fully curated experience for a maximum of six guests.</p>
+        <div class="contact-info">
+          <div class="ci-item">
+            <span class="ci-label">Email</span>
+            <span class="ci-val">dive@abyssal.com</span>
+          </div>
+          <div class="ci-item">
+            <span class="ci-label">Phone</span>
+            <span class="ci-val">+1 (808) 000-DEEP</span>
+          </div>
+          <div class="ci-item">
+            <span class="ci-label">Base</span>
+            <span class="ci-val">Guam, Western Pacific</span>
+          </div>
+        </div>
+      </div>
+      <div class="contact-right">
+        <div class="contact-form">
+          <div class="form-group">
+            <label>Full Name</label>
+            <input type="text" placeholder="Your name" />
+          </div>
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" placeholder="your@email.com" />
+          </div>
+          <div class="form-group">
+            <label>Expedition Interest</label>
+            <select>
+              <option>Mesopelagic Drift — $24,000</option>
+              <option>Bathypelagic Plunge — $89,000</option>
+              <option>Challenger Deep — $420,000</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Message</label>
+            <textarea placeholder="Tell us about yourself..."></textarea>
+          </div>
+          <button class="submit-btn" id="submit-btn">
+            <span>Send Inquiry</span>
+            <div class="btn-ripple"></div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-logo">ABYSSAL</div>
+      <div class="footer-tagline">The Last Frontier Awaits Below</div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Abyssal Expeditions Ltd. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Safety Protocols</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
